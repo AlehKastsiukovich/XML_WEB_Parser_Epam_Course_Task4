@@ -9,7 +9,7 @@
     <xsd:complexType name="touristVoucher">
         <xsd:sequence>
             <xsd:element name="type" type="type"/>
-            <xsd:element name="country" type="oneLanguageString"/>
+            <xsd:element name="country" type="countryString"/>
             <xsd:element name="numberDaysNights" type="xsd:positiveInteger"/>
             <xsd:element name="transport" type="transport"/>
             <xsd:element name="hotelSpecification" type="hotelSpecification"/>
@@ -18,7 +18,7 @@
         <xsd:attribute name="id" type="xsd:ID" use="required"/>
     </xsd:complexType>
 
-    <xsd:simpleType name="oneLanguageString">
+    <xsd:simpleType name="countryString">
         <xsd:restriction base="xsd:string">
             <xsd:pattern value="([A-Z][A-Za-z\s]+)"/>
         </xsd:restriction>

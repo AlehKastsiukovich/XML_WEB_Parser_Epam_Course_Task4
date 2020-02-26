@@ -1,68 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <touristVouchers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xsi:noNamespaceSchemaLocation="ТouristVouchers.xsd">
-    <touristVoucher id="IND1">
+    <touristVoucher id="czech1">
         <type>weekend</type>
-        <country>Индия</country>
-        <numberDaysNights>2</numberDaysNights>
-        <transport>air</transport>
-        <hotelProps>
-            <stars>5</stars>
-            <meals>HB</meals>
-            <roomPlaces>2</roomPlaces>
-            <condition>+</condition>
-            <TV>+</TV>
-            <WIFI>+</WIFI>
-            <freeParking>-</freeParking>
-        </hotelProps>
-        <cost currency="EUR">1300.00</cost>
-    </touristVoucher>
-    <touristVoucher id="JAP2">
-        <type>tour</type>
-        <country>Japan</country>
+        <country>Czech Republic</country>
         <numberDaysNights>3</numberDaysNights>
-        <transport>charter</transport>
-        <hotelProps>
+        <transport>bus</transport>
+        <hotelSpecification>
             <stars>3</stars>
-            <meals>BB</meals>
-            <roomPlaces>1</roomPlaces>
-            <condition>-</condition>
-            <TV>-</TV>
-            <WIFI>+</WIFI>
-            <freeParking>-</freeParking>
-        </hotelProps>
-        <cost currency="USD">2000.00</cost>
+            <meals>HB</meals>
+            <numberOfRooms>1</numberOfRooms>
+            <airCondition>true</airCondition>
+            <tv>true</tv>
+            <wifi>true</wifi>
+            <parking>false</parking>
+        </hotelSpecification>
+        <price>300.00</price>
     </touristVoucher>
-    <touristVoucher id="IS3">
+    <touristVoucher id="usa1">
+        <type>relaxation</type>
+        <country>USA</country>
+        <numberDaysNights>30</numberDaysNights>
+        <transport>air</transport>
+        <hotelSpecification>
+            <stars>4</stars>
+            <meals>AI</meals>
+            <numberOfRooms>2</numberOfRooms>
+            <airCondition>true</airCondition>
+            <tv>true</tv>
+            <wifi>true</wifi>
+            <parking>false</parking>
+        </hotelSpecification>
+        <price>6000.00</price>
+    </touristVoucher>
+    <touristVoucher id="isr1">
         <type>pilgrimage</type>
-        <country>Израиль</country>
-        <numberDaysNights>5</numberDaysNights>
-        <transport>charter</transport>
-        <hotelProps>
-            <stars>3</stars>
-            <meals>Al</meals>
-            <roomPlaces>5</roomPlaces>
-            <condition>+</condition>
-            <TV>-</TV>
-            <WIFI>-</WIFI>
-            <freeParking>-</freeParking>
-        </hotelProps>
-        <cost currency="USD">2000.00</cost>
+        <country>Israel</country>
+        <numberDaysNights>14</numberDaysNights>
+        <transport>bus</transport>
+        <hotelSpecification>
+            <stars>2</stars>
+            <meals>HB</meals>
+            <numberOfRooms>1</numberOfRooms>
+            <airCondition>false</airCondition>
+            <tv>false</tv>
+            <wifi>false</wifi>
+            <parking>false</parking>
+        </hotelSpecification>
+        <price>2000.00</price>
     </touristVoucher>
     <touristVoucher id="SA4">
         <type>pilgrimage</type>
-        <country>Saudi Arabia</country>
-        <numberDaysNights>3</numberDaysNights>
+        <country>India</country>
+        <numberDaysNights>21</numberDaysNights>
         <transport>air</transport>
-        <hotelProps>
+        <hotelSpecification>
             <stars>5</stars>
-            <meals>HB</meals>
-            <roomPlaces>2</roomPlaces>
-            <condition>+</condition>
-            <TV>+</TV>
-            <WIFI>+</WIFI>
-            <freeParking>+</freeParking>
-        </hotelProps>
-        <cost currency="EUR">1500.00</cost>
+            <meals>AI</meals>
+            <numberOfRooms>3</numberOfRooms>
+            <airCondition>true</airCondition>
+            <tv>true</tv>
+            <wifi>true</wifi>
+            <parking>true</parking>
+        </hotelSpecification>
+        <price>3250.00</price>
     </touristVoucher>
 </touristVouchers>
+
+
