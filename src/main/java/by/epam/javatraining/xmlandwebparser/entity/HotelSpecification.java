@@ -1,5 +1,7 @@
 package by.epam.javatraining.xmlandwebparser.entity;
 
+import java.math.BigDecimal;
+
 public class HotelSpecification {
     private int starsNumber;
     private MealType mealType;
