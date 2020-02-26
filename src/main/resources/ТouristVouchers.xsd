@@ -44,11 +44,11 @@
     </xsd:simpleType>
 
     <xsd:simpleType name="meal">
-        <xsd:restriction base="xsd:string">
-            <xsd:enumeration value="HB"/>
-            <xsd:enumeration value="BB"/>
-            <xsd:enumeration value="AI"/>
-        </xsd:restriction>
+    <xsd:restriction base="xsd:string">
+        <xsd:enumeration value="HB"/>
+        <xsd:enumeration value="BB"/>
+        <xsd:enumeration value="AI"/>
+    </xsd:restriction>
     </xsd:simpleType>
 
     <xsd:simpleType name="type">
