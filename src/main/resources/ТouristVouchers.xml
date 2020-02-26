@@ -2,10 +2,11 @@
 <touristVouchers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xsi:noNamespaceSchemaLocation="ТouristVouchers.xsd">
     <touristVoucher id="czech1">
-        <type>weekend</type>
+        <type>WEEKEND</type>
         <country>Czech Republic</country>
+        <startDate>2020-02-25</startDate>
         <numberDaysNights>3</numberDaysNights>
-        <transport>bus</transport>
+        <transport>BUS</transport>
         <hotelSpecification>
             <stars>3</stars>
             <meals>HB</meals>
@@ -18,10 +19,11 @@
         <price>300.00</price>
     </touristVoucher>
     <touristVoucher id="usa1">
-        <type>relaxation</type>
+        <type>RELAXATION</type>
         <country>USA</country>
+        <startDate>2020-05-09</startDate>
         <numberDaysNights>30</numberDaysNights>
-        <transport>air</transport>
+        <transport>AIR</transport>
         <hotelSpecification>
             <stars>4</stars>
             <meals>AI</meals>
@@ -34,10 +36,11 @@
         <price>6000.00</price>
     </touristVoucher>
     <touristVoucher id="isr1">
-        <type>pilgrimage</type>
+        <type>PILGRIMAGE</type>
         <country>Israel</country>
+        <startDate>2020-03-01</startDate>
         <numberDaysNights>14</numberDaysNights>
-        <transport>bus</transport>
+        <transport>BUS</transport>
         <hotelSpecification>
             <stars>2</stars>
             <meals>HB</meals>
@@ -50,10 +53,11 @@
         <price>2000.00</price>
     </touristVoucher>
     <touristVoucher id="SA4">
-        <type>pilgrimage</type>
+        <type>PILGRIMAGE</type>
         <country>India</country>
+        <startDate>2020-08-09</startDate>
         <numberDaysNights>21</numberDaysNights>
-        <transport>air</transport>
+        <transport>AIR</transport>
         <hotelSpecification>
             <stars>5</stars>
             <meals>AI</meals>
