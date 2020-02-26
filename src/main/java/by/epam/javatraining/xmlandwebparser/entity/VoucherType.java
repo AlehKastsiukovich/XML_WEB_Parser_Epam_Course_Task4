@@ -1,6 +1,6 @@
 package by.epam.javatraining.xmlandwebparser.entity;
 
-public enum Type {
+public enum VoucherType {
     WEEKEND,
     TOUR,
     RELAXATION,
