@@ -70,4 +70,17 @@ public class HotelSpecification {
     public void setParking(boolean parking) {
         this.parking = parking;
     }
+
+    @Override
+    public String toString() {
+        return "HotelSpecification{" +
+                "starsNumber=" + starsNumber +
+                ", mealType=" + mealType +
+                ", numberOfRooms=" + numberOfRooms +
+                ", airCondition=" + airCondition +
+                ", tv=" + tv +
+                ", wifi=" + wifi +
+                ", parking=" + parking +
+                '}';
+    }
 }

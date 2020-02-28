@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <touristVouchers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 xsi:noNamespaceSchemaLocation="ТouristVouchers.xsd">
+                 xsi:noNamespaceSchemaLocation="touristVouchers.xsd">
     <touristVoucher id="czech1">
         <type>WEEKEND</type>
         <country>Czech Republic</country>
