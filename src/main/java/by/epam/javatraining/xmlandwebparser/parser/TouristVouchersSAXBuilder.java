@@ -4,7 +4,6 @@ import by.epam.javatraining.xmlandwebparser.entity.TouristVoucher;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
-
 import java.io.IOException;
 import java.util.Set;
 
