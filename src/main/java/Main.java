@@ -1,8 +1,5 @@
-import by.epam.javatraining.xmlandwebparser.entity.TouristVoucher;
-import by.epam.javatraining.xmlandwebparser.parser.TouristVouchersDOMBuilder;
-import by.epam.javatraining.xmlandwebparser.parser.TouristVouchersSAXBuilder;
-
-import java.text.ParseException;
+import by.epam.javatraining.xmlandwebparser.parser.dom.TouristVouchersDOMBuilder;
+import by.epam.javatraining.xmlandwebparser.parser.sax.TouristVouchersSAXBuilder;
 
 public class Main {
 

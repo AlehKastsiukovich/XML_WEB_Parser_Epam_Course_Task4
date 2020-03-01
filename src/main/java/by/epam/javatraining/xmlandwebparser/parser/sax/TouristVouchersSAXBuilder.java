@@ -1,4 +1,4 @@
-package by.epam.javatraining.xmlandwebparser.parser;
+package by.epam.javatraining.xmlandwebparser.parser.sax;
 
 import by.epam.javatraining.xmlandwebparser.entity.TouristVoucher;
 import org.xml.sax.SAXException;

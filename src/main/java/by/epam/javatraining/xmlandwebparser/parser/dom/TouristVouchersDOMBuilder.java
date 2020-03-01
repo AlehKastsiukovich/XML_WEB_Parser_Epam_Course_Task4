@@ -1,4 +1,4 @@
-package by.epam.javatraining.xmlandwebparser.parser;
+package by.epam.javatraining.xmlandwebparser.parser.dom;
 
 import by.epam.javatraining.xmlandwebparser.entity.*;
 import javax.xml.parsers.DocumentBuilder;
