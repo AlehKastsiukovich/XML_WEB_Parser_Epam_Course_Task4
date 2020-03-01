@@ -1,14 +1,12 @@
 package by.epam.javatraining.xmlandwebparser.builder.sax;
 
-import by.epam.javatraining.xmlandwebparser.entity.TouristVoucher;
+import by.epam.javatraining.xmlandwebparser.builder.AbstractTouristVoucherBuilder;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 import java.io.IOException;
-import java.util.Set;
 
-public class TouristVouchersSAXBuilder {
-    private Set<TouristVoucher> touristVoucherSet;
+public class TouristVouchersSAXBuilder extends AbstractTouristVoucherBuilder {
     private TouristVoucherHandler touristVoucherHandler;
     private XMLReader reader;
 
@@ -22,16 +20,11 @@ public class TouristVouchersSAXBuilder {
         }
     }
 
-    public Set<TouristVoucher> getTouristVoucherSet() {
-        return touristVoucherSet;
-    }
-
+    @Override
     public void buildSetTouristVouchers(String fileName) {
         try {
             reader.parse(fileName);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
+        } catch (IOException | SAXException e) {
             e.printStackTrace();
         }
 

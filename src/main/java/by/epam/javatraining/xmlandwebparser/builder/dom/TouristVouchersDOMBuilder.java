@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Set;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -28,10 +27,6 @@ public class TouristVouchersDOMBuilder extends AbstractTouristVoucherBuilder {
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         }
-    }
-
-    public Set<TouristVoucher> getTravelVoucherSet() {
-        return touristVoucherSet;
     }
 
     @Override

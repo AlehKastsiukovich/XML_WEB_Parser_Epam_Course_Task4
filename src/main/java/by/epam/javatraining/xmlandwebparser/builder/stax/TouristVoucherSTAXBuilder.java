@@ -1,5 +1,6 @@
 package by.epam.javatraining.xmlandwebparser.builder.stax;
 
+import by.epam.javatraining.xmlandwebparser.builder.AbstractTouristVoucherBuilder;
 import by.epam.javatraining.xmlandwebparser.entity.*;
 import by.epam.javatraining.xmlandwebparser.builder.TouristVoucherEnum;
 import javax.xml.stream.XMLInputFactory;
@@ -16,7 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.HashSet;
 import java.util.Set;
 
-public class TouristVoucherSTAXBuilder {
+public class TouristVoucherSTAXBuilder extends AbstractTouristVoucherBuilder {
     private static final int ID_ATTRIBUTE_POSITION = 0;
     private Set<TouristVoucher> touristVouchers = new HashSet<>();
     private XMLInputFactory inputFactory;
@@ -29,6 +30,7 @@ public class TouristVoucherSTAXBuilder {
         return touristVouchers;
     }
 
+    @Override
     public void buildSetTouristVouchers(String fileName) {
         FileInputStream inputStream = null;
         XMLStreamReader reader = null;

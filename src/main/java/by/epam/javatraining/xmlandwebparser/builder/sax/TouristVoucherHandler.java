@@ -1,5 +1,6 @@
 package by.epam.javatraining.xmlandwebparser.builder.sax;
 
+import by.epam.javatraining.xmlandwebparser.builder.AbstractTouristVoucherBuilder;
 import by.epam.javatraining.xmlandwebparser.entity.*;
 import by.epam.javatraining.xmlandwebparser.builder.TouristVoucherEnum;
 import org.xml.sax.Attributes;
@@ -31,6 +32,7 @@ public class TouristVoucherHandler extends DefaultHandler {
         if ("touristVoucher".equals(localName)) {
             current = new TouristVoucher();
             current.setHotelSpecification(new HotelSpecification());
+
 
             current.setId(attrs.getValue(0));
         }
@@ -98,7 +100,6 @@ public class TouristVoucherHandler extends DefaultHandler {
                     current.setPrice(new BigDecimal(charsBtwTeg));
                     break;
                 default:
-                    System.out.println("Empty!!");
                     throw new EnumConstantNotPresentException(currentEnum.getDeclaringClass(), currentEnum.name());
             }
         }
