@@ -5,12 +5,13 @@ import by.epam.javatraining.xmlandwebparser.entity.TouristVoucher;
 import by.epam.javatraining.xmlandwebparser.entity.TransportType;
 import by.epam.javatraining.xmlandwebparser.entity.VoucherType;
 import java.math.BigDecimal;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-public class AbstractTouristVoucherBuilder {
-    private Set<TouristVoucher> touristVoucherSet;
+public abstract class AbstractTouristVoucherBuilder {
+    protected Set<TouristVoucher> touristVoucherSet;
     private String id;
     private VoucherType voucherType;
     private String country;
@@ -31,6 +32,8 @@ public class AbstractTouristVoucherBuilder {
     public Set<TouristVoucher> getTouristVoucherSet() {
         return touristVoucherSet;
     }
+
+    public abstract void buildSetTouristVouchers(String fileName) throws ParseException;
 
     public AbstractTouristVoucherBuilder buildDate(Date date) {
         this.date = date;
@@ -64,6 +67,11 @@ public class AbstractTouristVoucherBuilder {
 
     public AbstractTouristVoucherBuilder buildVoucherType(VoucherType voucherType) {
         this.voucherType = voucherType;
+        return this;
+    }
+
+    public AbstractTouristVoucherBuilder buildHotelSpecification(HotelSpecification hotelSpecification) {
+        this.hotelSpecification = hotelSpecification;
         return this;
     }
 

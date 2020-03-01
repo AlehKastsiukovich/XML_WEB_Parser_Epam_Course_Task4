@@ -1,6 +1,7 @@
 package by.epam.javatraining.xmlandwebparser.builder.dom;
 
 import by.epam.javatraining.xmlandwebparser.builder.AbstractTouristVoucherBuilder;
+import by.epam.javatraining.xmlandwebparser.builder.HotelSpecificationBuilder;
 import by.epam.javatraining.xmlandwebparser.entity.*;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -9,8 +10,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -18,11 +18,9 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class TouristVouchersDOMBuilder extends AbstractTouristVoucherBuilder {
-    private List<TouristVoucher> travelVoucherList;
     private DocumentBuilder documentBuilder;
 
     public TouristVouchersDOMBuilder() {
-        travelVoucherList = new ArrayList<>();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
         try {
@@ -32,11 +30,12 @@ public class TouristVouchersDOMBuilder extends AbstractTouristVoucherBuilder {
         }
     }
 
-    public List<TouristVoucher> getTravelVoucherList() {
-        return travelVoucherList;
+    public Set<TouristVoucher> getTravelVoucherSet() {
+        return touristVoucherSet;
     }
 
-    public void buildTouristVoucherList(String fileName) throws ParseException {
+    @Override
+    public void buildSetTouristVouchers(String fileName) throws ParseException {
         Document document = null;
 
         try {
@@ -47,16 +46,24 @@ public class TouristVouchersDOMBuilder extends AbstractTouristVoucherBuilder {
             for (int i = 0; i < touristVoucher.getLength(); i++) {
                 Element touristVoucherElement = (Element) touristVoucher.item(i);
                 TouristVoucher example = buildTouristVoucher(touristVoucherElement);
-                travelVoucherList.add(example);
+                touristVoucherSet.add(example);
             }
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (SAXException | IOException e) {
             e.printStackTrace();
         }
     }
 
     private TouristVoucher buildTouristVoucher(Element element) throws ParseException {
+        HotelSpecificationBuilder hotelBuilder = new HotelSpecificationBuilder()
+                .buildStarsNumber(Integer.parseInt(getElementTextContent(element, "stars")))
+                .buildMealType(MealType.valueOf(getElementTextContent(element, "meals")))
+                .buildNumberOfRooms(Integer.parseInt(getElementTextContent(element, "numberOfRooms")))
+                .buildAirCondition(Boolean.parseBoolean(getElementTextContent(element, "airCondition")))
+                .buildTv(Boolean.parseBoolean(getElementTextContent(element, "tv")))
+                .buildWifi(Boolean.parseBoolean(getElementTextContent(element, "wifi")))
+                .buildParking(Boolean.parseBoolean(getElementTextContent(element, "parking")));
+        HotelSpecification hotelSpecification = new HotelSpecification(hotelBuilder);
+
         AbstractTouristVoucherBuilder builder = new TouristVouchersDOMBuilder()
                 .buildId(element.getAttribute("id"))
                 .buildVoucherType(VoucherType.valueOf(getElementTextContent(element, "type")))
@@ -64,24 +71,10 @@ public class TouristVouchersDOMBuilder extends AbstractTouristVoucherBuilder {
                 .buildDate(new SimpleDateFormat("yyyy-MM-dd").parse(getElementTextContent(element, "startDate")))
                 .buildDaysNumber(Integer.parseInt(getElementTextContent(element, "numberDaysNights")))
                 .buildTransportType(TransportType.valueOf(getElementTextContent(element, "transport")))
-                .b
+                .buildHotelSpecification(hotelSpecification)
+                .buildPrice(new BigDecimal(getElementTextContent(element, "price")));
 
-
-
-
-        HotelSpecification hotelSpecification = new HotelSpecification();
-        hotelSpecification.setStarsNumber(Integer.parseInt(getElementTextContent(element, "stars")));
-        hotelSpecification.setMealType(MealType.valueOf(getElementTextContent(element, "meals")));
-        hotelSpecification.setNumberOfRooms(Integer.parseInt(getElementTextContent(element, "numberOfRooms")));
-        hotelSpecification.setAirCondition(Boolean.parseBoolean(getElementTextContent(element, "airCondition")));
-        hotelSpecification.setTv(Boolean.parseBoolean(getElementTextContent(element, "tv")));
-        hotelSpecification.setWifi(Boolean.parseBoolean(getElementTextContent(element, "wifi")));
-        hotelSpecification.setParking(Boolean.parseBoolean(getElementTextContent(element, "parking")));
-        touristVoucher.setHotelSpecification(hotelSpecification);
-        touristVoucher.setPrice(new BigDecimal(getElementTextContent(element, "price")));
-
-        TouristVoucher touristVoucher = new TouristVoucher();
-        return touristVoucher;
+        return new TouristVoucher(builder);
     }
 
     private static String getElementTextContent(Element element, String elementName) {

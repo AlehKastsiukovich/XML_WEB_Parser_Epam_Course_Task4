@@ -1,5 +1,7 @@
 package by.epam.javatraining.xmlandwebparser.entity;
 
+import by.epam.javatraining.xmlandwebparser.builder.HotelSpecificationBuilder;
+
 import java.math.BigDecimal;
 
 public class HotelSpecification {
@@ -10,6 +12,16 @@ public class HotelSpecification {
     private boolean tv;
     private boolean wifi;
     private boolean parking;
+
+    public HotelSpecification(HotelSpecificationBuilder builder) {
+        this.starsNumber = builder.getStarsNumber();
+        this.mealType = builder.getMealType();
+        this.numberOfRooms = builder.getNumberOfRooms();
+        this.airCondition = builder.isAirCondition();
+        this.tv = builder.isTv();
+        this.wifi = builder.isWifi();
+        this.parking = builder.isParking();
+    }
 
     public HotelSpecification() {
 

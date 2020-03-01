@@ -25,6 +25,10 @@ public class TouristVoucher {
         this.price = builder.getPrice();
     }
 
+    public TouristVoucher() {
+
+    }
+
     public String getId() {
         return id;
     }
