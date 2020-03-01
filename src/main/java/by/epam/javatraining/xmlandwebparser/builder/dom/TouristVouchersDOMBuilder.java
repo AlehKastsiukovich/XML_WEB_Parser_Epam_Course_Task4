@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -17,6 +18,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class TouristVouchersDOMBuilder extends AbstractTouristVoucherBuilder {
+    private static final Logger logger = Logger.getLogger(TouristVouchersDOMBuilder.class);
     private DocumentBuilder documentBuilder;
 
     public TouristVouchersDOMBuilder() {
@@ -25,7 +27,7 @@ public class TouristVouchersDOMBuilder extends AbstractTouristVoucherBuilder {
         try {
             documentBuilder = factory.newDocumentBuilder();
         } catch (ParserConfigurationException e) {
-            e.printStackTrace();
+            logger.error(e);
         }
     }
 
@@ -44,7 +46,7 @@ public class TouristVouchersDOMBuilder extends AbstractTouristVoucherBuilder {
                 touristVoucherSet.add(example);
             }
         } catch (SAXException | IOException e) {
-            e.printStackTrace();
+            logger.error(e);
         }
     }
 

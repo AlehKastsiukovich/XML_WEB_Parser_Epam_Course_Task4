@@ -3,6 +3,8 @@ package by.epam.javatraining.xmlandwebparser.builder.stax;
 import by.epam.javatraining.xmlandwebparser.builder.AbstractTouristVoucherBuilder;
 import by.epam.javatraining.xmlandwebparser.entity.*;
 import by.epam.javatraining.xmlandwebparser.builder.TouristVoucherEnum;
+import org.apache.log4j.Logger;
+
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
@@ -18,6 +20,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class TouristVoucherSTAXBuilder extends AbstractTouristVoucherBuilder {
+    private static final Logger logger = Logger.getLogger(TouristVoucherSTAXBuilder.class);
     private static final int ID_ATTRIBUTE_POSITION = 0;
     private Set<TouristVoucher> touristVouchers = new HashSet<>();
     private XMLInputFactory inputFactory;
@@ -51,14 +54,14 @@ public class TouristVoucherSTAXBuilder extends AbstractTouristVoucherBuilder {
                 }
             }
         } catch (FileNotFoundException | ParseException | XMLStreamException e) {
-            e.printStackTrace();
+            logger.error(e);
         } finally {
             try {
                 if (inputStream != null) {
                     inputStream.close();
                 }
             } catch (IOException e) {
-
+                logger.error(e);
             }
         }
     }

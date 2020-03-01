@@ -1,8 +1,8 @@
 package by.epam.javatraining.xmlandwebparser.builder.sax;
 
-import by.epam.javatraining.xmlandwebparser.builder.AbstractTouristVoucherBuilder;
 import by.epam.javatraining.xmlandwebparser.entity.*;
 import by.epam.javatraining.xmlandwebparser.builder.TouristVoucherEnum;
+import org.apache.log4j.Logger;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 import java.math.BigDecimal;
@@ -13,6 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class TouristVoucherHandler extends DefaultHandler {
+    private static final Logger logger = Logger.getLogger(TouristVoucherHandler.class);
     private Set<TouristVoucher> touristVoucherSet;
     private TouristVoucher current = null;
     private TouristVoucherEnum currentEnum = null;
@@ -32,8 +33,6 @@ public class TouristVoucherHandler extends DefaultHandler {
         if ("touristVoucher".equals(localName)) {
             current = new TouristVoucher();
             current.setHotelSpecification(new HotelSpecification());
-
-
             current.setId(attrs.getValue(0));
         }
         else {
@@ -66,7 +65,7 @@ public class TouristVoucherHandler extends DefaultHandler {
                     try {
                         current.setDate(new SimpleDateFormat("yyyy-MM-dd").parse(charsBtwTeg));
                     } catch (ParseException e) {
-
+                        logger.error(e);
                     }
                     break;
                 case NUMBERDAYSNIGHTS:
