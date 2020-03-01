@@ -66,4 +66,36 @@ public class AbstractTouristVoucherBuilder {
         this.voucherType = voucherType;
         return this;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public VoucherType getVoucherType() {
+        return voucherType;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public int getNumberDays() {
+        return numberDays;
+    }
+
+    public TransportType getTransportType() {
+        return transportType;
+    }
+
+    public HotelSpecification getHotelSpecification() {
+        return hotelSpecification;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
 }

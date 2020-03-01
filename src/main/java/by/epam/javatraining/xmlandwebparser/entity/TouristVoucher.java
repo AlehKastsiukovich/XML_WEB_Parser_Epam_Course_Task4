@@ -1,5 +1,7 @@
 package by.epam.javatraining.xmlandwebparser.entity;
 
+import by.epam.javatraining.xmlandwebparser.builder.AbstractTouristVoucherBuilder;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -13,8 +15,8 @@ public class TouristVoucher {
     private HotelSpecification hotelSpecification;
     private BigDecimal price;
 
-    public TouristVoucher() {
-
+    public TouristVoucher(AbstractTouristVoucherBuilder builder) {
+        this.id = builder.
     }
 
     public String getId() {

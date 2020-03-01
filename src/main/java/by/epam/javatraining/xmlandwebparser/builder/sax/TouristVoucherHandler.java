@@ -1,7 +1,7 @@
-package by.epam.javatraining.xmlandwebparser.parser.sax;
+package by.epam.javatraining.xmlandwebparser.builder.sax;
 
 import by.epam.javatraining.xmlandwebparser.entity.*;
-import by.epam.javatraining.xmlandwebparser.parser.TouristVoucherEnum;
+import by.epam.javatraining.xmlandwebparser.builder.TouristVoucherEnum;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 import java.math.BigDecimal;

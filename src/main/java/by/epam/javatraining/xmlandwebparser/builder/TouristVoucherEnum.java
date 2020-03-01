@@ -1,4 +1,4 @@
-package by.epam.javatraining.xmlandwebparser.parser;
+package by.epam.javatraining.xmlandwebparser.builder;
 
 public enum TouristVoucherEnum {
     TOURISTVOUCHERS("touristVouchers"),

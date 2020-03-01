@@ -1,6 +1,5 @@
-import by.epam.javatraining.xmlandwebparser.parser.dom.TouristVouchersDOMBuilder;
-import by.epam.javatraining.xmlandwebparser.parser.sax.TouristVouchersSAXBuilder;
-import by.epam.javatraining.xmlandwebparser.parser.stax.TouristVoucherSTAXBuilder;
+import by.epam.javatraining.xmlandwebparser.builder.dom.TouristVouchersDOMBuilder;
+import by.epam.javatraining.xmlandwebparser.builder.stax.TouristVoucherSTAXBuilder;
 
 public class Main {
 

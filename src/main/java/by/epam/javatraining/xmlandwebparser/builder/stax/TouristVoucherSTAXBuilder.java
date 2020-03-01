@@ -1,7 +1,7 @@
-package by.epam.javatraining.xmlandwebparser.parser.stax;
+package by.epam.javatraining.xmlandwebparser.builder.stax;
 
 import by.epam.javatraining.xmlandwebparser.entity.*;
-import by.epam.javatraining.xmlandwebparser.parser.TouristVoucherEnum;
+import by.epam.javatraining.xmlandwebparser.builder.TouristVoucherEnum;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;

@@ -1,5 +1,6 @@
-package by.epam.javatraining.xmlandwebparser.parser.dom;
+package by.epam.javatraining.xmlandwebparser.builder.dom;
 
+import by.epam.javatraining.xmlandwebparser.builder.AbstractTouristVoucherBuilder;
 import by.epam.javatraining.xmlandwebparser.entity.*;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -16,7 +17,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class TouristVouchersDOMBuilder {
+public class TouristVouchersDOMBuilder extends AbstractTouristVoucherBuilder {
     private List<TouristVoucher> travelVoucherList;
     private DocumentBuilder documentBuilder;
 
