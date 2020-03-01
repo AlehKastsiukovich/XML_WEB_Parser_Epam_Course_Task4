@@ -2,6 +2,7 @@ package by.epam.javatraining.xmlandwebparser.parser.stax;
 
 import by.epam.javatraining.xmlandwebparser.entity.*;
 import by.epam.javatraining.xmlandwebparser.parser.TouristVoucherEnum;
+
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
@@ -17,6 +18,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class TouristVoucherSTAXBuilder {
+    private static final int ID_ATTRIBUTE_POSITION = 0;
     private Set<TouristVoucher> touristVouchers = new HashSet<>();
     private XMLInputFactory inputFactory;
 
@@ -62,7 +64,7 @@ public class TouristVoucherSTAXBuilder {
 
     private TouristVoucher buildTouristVoucher(XMLStreamReader reader) throws XMLStreamException, ParseException {
         TouristVoucher touristVoucher = new TouristVoucher();
-        touristVoucher.setId(reader.getAttributeValue(null, TouristVoucherEnum.TOURISTVOUCHER.getValue()));
+        touristVoucher.setId(reader.getAttributeValue(ID_ATTRIBUTE_POSITION));
 
         String name;
         while (reader.hasNext()) {
@@ -103,8 +105,8 @@ public class TouristVoucherSTAXBuilder {
                     break;
             }
         }
-        throw new XMLStreamException("Unknown element in tag touristVoucher");
 
+        throw new XMLStreamException("Unknown element in tag touristVoucher");
     }
 
     private HotelSpecification getXMLHotelSpecification(XMLStreamReader reader) throws XMLStreamException {
@@ -150,6 +152,7 @@ public class TouristVoucherSTAXBuilder {
                     break;
             }
         }
+
         throw new XMLStreamException("Unknown element in tag HotelSpecification");
     }
 

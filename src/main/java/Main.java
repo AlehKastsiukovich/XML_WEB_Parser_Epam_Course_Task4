@@ -1,5 +1,6 @@
 import by.epam.javatraining.xmlandwebparser.parser.dom.TouristVouchersDOMBuilder;
 import by.epam.javatraining.xmlandwebparser.parser.sax.TouristVouchersSAXBuilder;
+import by.epam.javatraining.xmlandwebparser.parser.stax.TouristVoucherSTAXBuilder;
 
 public class Main {
 
@@ -16,10 +17,14 @@ public class Main {
 //            System.out.println(voucher);
 //        }
 
-        TouristVouchersSAXBuilder touristVouchersSAXBuilder = new TouristVouchersSAXBuilder();
-        touristVouchersSAXBuilder.buildSetTouristVouchers(path);
+//        TouristVouchersSAXBuilder touristVouchersSAXBuilder = new TouristVouchersSAXBuilder();
+//        touristVouchersSAXBuilder.buildSetTouristVouchers(path);
+//
+//        System.out.println(touristVouchersSAXBuilder.getTouristVoucherSet());
 
-        System.out.println(touristVouchersSAXBuilder.getTouristVoucherSet());
+        TouristVoucherSTAXBuilder touristVoucherSTAXBuilder = new TouristVoucherSTAXBuilder();
+        touristVoucherSTAXBuilder.buildSetTouristVouchers(path);
+        System.out.println(touristVoucherSTAXBuilder.getTouristVouchers());
 
     }
 }
