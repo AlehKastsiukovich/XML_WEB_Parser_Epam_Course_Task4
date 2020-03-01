@@ -3,6 +3,7 @@ package by.epam.javatraining.xmlandwebparser.entity;
 import by.epam.javatraining.xmlandwebparser.builder.AbstractTouristVoucherBuilder;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Objects;
 
 public class TouristVoucher {
     private String id;
@@ -105,5 +106,27 @@ public class TouristVoucher {
                 ", hotelSpecification=" + hotelSpecification +
                 ", price=" + price +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        TouristVoucher that = (TouristVoucher) o;
+        return numberDays == that.numberDays &&
+                Objects.equals(id, that.id) &&
+                voucherType == that.voucherType &&
+                Objects.equals(country, that.country) &&
+                Objects.equals(date, that.date) &&
+                transportType == that.transportType &&
+                Objects.equals(hotelSpecification, that.hotelSpecification) &&
+                Objects.equals(price, that.price);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, voucherType, country, date, numberDays, transportType, hotelSpecification, price);
     }
 }
