@@ -57,13 +57,18 @@ public class TouristVouchersDOMBuilder extends AbstractTouristVoucherBuilder {
     }
 
     private TouristVoucher buildTouristVoucher(Element element) throws ParseException {
-        TouristVoucher touristVoucher = new TouristVoucher();
-        touristVoucher.setId(element.getAttribute("id"));
-        touristVoucher.setVoucherType(VoucherType.valueOf(getElementTextContent(element, "type")));
-        touristVoucher.setCountry(getElementTextContent(element, "country"));
-        touristVoucher.setDate(new SimpleDateFormat("yyyy-MM-dd").parse(getElementTextContent(element, "startDate")));
-        touristVoucher.setNumberDays(Integer.parseInt(getElementTextContent(element, "numberDaysNights")));
-        touristVoucher.setTransportType(TransportType.valueOf(getElementTextContent(element, "transport")));
+        AbstractTouristVoucherBuilder builder = new TouristVouchersDOMBuilder()
+                .buildId(element.getAttribute("id"))
+                .buildVoucherType(VoucherType.valueOf(getElementTextContent(element, "type")))
+                .buildCountry(getElementTextContent(element, "country"))
+                .buildDate(new SimpleDateFormat("yyyy-MM-dd").parse(getElementTextContent(element, "startDate")))
+                .buildDaysNumber(Integer.parseInt(getElementTextContent(element, "numberDaysNights")))
+                .buildTransportType(TransportType.valueOf(getElementTextContent(element, "transport")))
+                .b
+
+
+
+
         HotelSpecification hotelSpecification = new HotelSpecification();
         hotelSpecification.setStarsNumber(Integer.parseInt(getElementTextContent(element, "stars")));
         hotelSpecification.setMealType(MealType.valueOf(getElementTextContent(element, "meals")));
@@ -75,6 +80,7 @@ public class TouristVouchersDOMBuilder extends AbstractTouristVoucherBuilder {
         touristVoucher.setHotelSpecification(hotelSpecification);
         touristVoucher.setPrice(new BigDecimal(getElementTextContent(element, "price")));
 
+        TouristVoucher touristVoucher = new TouristVoucher();
         return touristVoucher;
     }
 

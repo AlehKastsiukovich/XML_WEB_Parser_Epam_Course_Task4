@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class AbstractTouristVoucherBuilder {
-    protected Set<TouristVoucher> touristVoucherSet;
+    private Set<TouristVoucher> touristVoucherSet;
     private String id;
     private VoucherType voucherType;
     private String country;
