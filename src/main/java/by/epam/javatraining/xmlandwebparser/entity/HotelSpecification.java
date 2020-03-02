@@ -1,6 +1,6 @@
 package by.epam.javatraining.xmlandwebparser.entity;
 
-import by.epam.javatraining.xmlandwebparser.builder.HotelSpecificationBuilder;
+import by.epam.javatraining.xmlandwebparser.service.HotelSpecificationBuilder;
 
 public class HotelSpecification {
     private int starsNumber;

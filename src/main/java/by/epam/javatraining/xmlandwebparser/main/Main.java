@@ -1,6 +1,6 @@
 package by.epam.javatraining.xmlandwebparser.main;
 
-import by.epam.javatraining.xmlandwebparser.builder.dom.TouristVouchersDOMBuilder;
+import by.epam.javatraining.xmlandwebparser.service.dom.TouristVouchersDOMBuilder;
 import java.text.ParseException;
 
 public class Main {

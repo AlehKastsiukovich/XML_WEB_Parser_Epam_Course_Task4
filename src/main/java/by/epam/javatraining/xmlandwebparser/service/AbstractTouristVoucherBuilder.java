@@ -1,4 +1,4 @@
-package by.epam.javatraining.xmlandwebparser.builder;
+package by.epam.javatraining.xmlandwebparser.service;
 
 import by.epam.javatraining.xmlandwebparser.entity.HotelSpecification;
 import by.epam.javatraining.xmlandwebparser.entity.TouristVoucher;

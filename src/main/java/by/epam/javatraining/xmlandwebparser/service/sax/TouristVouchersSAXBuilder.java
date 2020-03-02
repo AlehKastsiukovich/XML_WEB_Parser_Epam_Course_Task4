@@ -1,6 +1,6 @@
-package by.epam.javatraining.xmlandwebparser.builder.sax;
+package by.epam.javatraining.xmlandwebparser.service.sax;
 
-import by.epam.javatraining.xmlandwebparser.builder.AbstractTouristVoucherBuilder;
+import by.epam.javatraining.xmlandwebparser.service.AbstractTouristVoucherBuilder;
 import org.apache.log4j.Logger;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;

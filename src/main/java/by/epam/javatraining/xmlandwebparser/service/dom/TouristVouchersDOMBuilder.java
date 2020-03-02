@@ -1,7 +1,7 @@
-package by.epam.javatraining.xmlandwebparser.builder.dom;
+package by.epam.javatraining.xmlandwebparser.service.dom;
 
-import by.epam.javatraining.xmlandwebparser.builder.AbstractTouristVoucherBuilder;
-import by.epam.javatraining.xmlandwebparser.builder.HotelSpecificationBuilder;
+import by.epam.javatraining.xmlandwebparser.service.AbstractTouristVoucherBuilder;
+import by.epam.javatraining.xmlandwebparser.service.HotelSpecificationBuilder;
 import by.epam.javatraining.xmlandwebparser.entity.*;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;

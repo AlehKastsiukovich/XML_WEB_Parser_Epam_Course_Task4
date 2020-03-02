@@ -1,9 +1,9 @@
 package by.epam.javatraining.xmlandwebparser.factory;
 
-import by.epam.javatraining.xmlandwebparser.builder.AbstractTouristVoucherBuilder;
-import by.epam.javatraining.xmlandwebparser.builder.dom.TouristVouchersDOMBuilder;
-import by.epam.javatraining.xmlandwebparser.builder.sax.TouristVouchersSAXBuilder;
-import by.epam.javatraining.xmlandwebparser.builder.stax.TouristVoucherSTAXBuilder;
+import by.epam.javatraining.xmlandwebparser.service.AbstractTouristVoucherBuilder;
+import by.epam.javatraining.xmlandwebparser.service.dom.TouristVouchersDOMBuilder;
+import by.epam.javatraining.xmlandwebparser.service.sax.TouristVouchersSAXBuilder;
+import by.epam.javatraining.xmlandwebparser.service.stax.TouristVoucherSTAXBuilder;
 
 public class TouristVoucherBuilderFactory {
 

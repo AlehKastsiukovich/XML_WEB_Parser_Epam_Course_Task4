@@ -11,9 +11,10 @@
   <title>XML parser</title>
 </head>
 <body>
+
 <h1>Upload your xml file</h1>
-<form action="upload" method="post">
-  <input type="file" name="file">
+<form action="upload" method="post" enctype="multipart/form-data">
+  <input type="file" name="file" multiple>
   <input type="submit">
 </form>
 
