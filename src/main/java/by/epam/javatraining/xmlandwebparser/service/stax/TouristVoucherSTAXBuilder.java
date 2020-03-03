@@ -4,7 +4,6 @@ import by.epam.javatraining.xmlandwebparser.service.AbstractTouristVoucherBuilde
 import by.epam.javatraining.xmlandwebparser.entity.*;
 import by.epam.javatraining.xmlandwebparser.service.TouristVoucherEnum;
 import org.apache.log4j.Logger;
-
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
