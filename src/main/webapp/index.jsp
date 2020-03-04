@@ -18,14 +18,19 @@
   </style>
 </head>
 <body>
+    <div class ="maintext">
     <h1 align="center">XML file parser</h1>
-    <form action="upload" method="post" enctype="multipart/form-data">
-      <p align="center"><input type="file" value="Choose file" name="file" multiple accept="application/xml"></p>
+    <form action="mainservlet" method="post" enctype="multipart/form-data">
+        <p align="center"><input type="file" name="file" accept="application/xml"></p>
+        <p align="center"><input type="submit"/></p>
     </form>
-    <form>
-      <p align="center"><input type="button" style="width: 95px;height: 50px" value="DOM parser"></p>
-      <p align="center"><input type="button" style="width: 95px;height: 50px" value="SAX parser"></p>
-      <p align="center"><input type="button" style="width: 95px;height: 50px" value="STAX parser"></p>
+
+    <form action="${pageContext.request.contextPath}/mainservlet" method="post">
+        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="button" value="button1">DOM parser</button></p>
+        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="button" value="button2">SAX parser</button></p>
+        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="button" value="button3">STAX parser</button></p>
     </form>
+    </div>
   </body>
 </html>
+

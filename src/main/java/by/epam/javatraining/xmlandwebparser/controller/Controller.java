@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.IOException;
 
-@WebServlet
+@WebServlet("/mainservlet")
 public class Controller extends HttpServlet {
 
     @Override
@@ -22,7 +22,6 @@ public class Controller extends HttpServlet {
     }
 
     private void handleRequest(HttpServletRequest request, HttpServletResponse response) {
-        //if request == что-то вызывать команду.
 
     }
 }
