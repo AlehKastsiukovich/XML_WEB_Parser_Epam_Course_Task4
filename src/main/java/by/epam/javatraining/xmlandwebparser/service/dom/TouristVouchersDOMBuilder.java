@@ -7,6 +7,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -32,11 +33,11 @@ public class TouristVouchersDOMBuilder extends AbstractTouristVoucherBuilder {
     }
 
     @Override
-    public void buildSetTouristVouchers(String fileName) throws ParseException {
+    public void buildSetTouristVouchers(InputStream source) throws ParseException {
         Document document = null;
 
         try {
-            document = documentBuilder.parse(fileName);
+            document = documentBuilder.parse(source);
             Element root = document.getDocumentElement();
             NodeList touristVoucher = root.getElementsByTagName("touristVoucher");
 

@@ -4,6 +4,8 @@ import by.epam.javatraining.xmlandwebparser.entity.HotelSpecification;
 import by.epam.javatraining.xmlandwebparser.entity.TouristVoucher;
 import by.epam.javatraining.xmlandwebparser.entity.TransportType;
 import by.epam.javatraining.xmlandwebparser.entity.VoucherType;
+
+import java.io.InputStream;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.util.Date;
@@ -33,7 +35,7 @@ public abstract class AbstractTouristVoucherBuilder {
         return touristVoucherSet;
     }
 
-    public abstract void buildSetTouristVouchers(String fileName) throws ParseException;
+    public abstract void buildSetTouristVouchers(InputStream file) throws ParseException;
 
     public AbstractTouristVoucherBuilder buildDate(Date date) {
         this.date = date;

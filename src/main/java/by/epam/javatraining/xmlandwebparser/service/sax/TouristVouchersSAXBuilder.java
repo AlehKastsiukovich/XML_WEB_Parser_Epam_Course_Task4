@@ -2,10 +2,12 @@ package by.epam.javatraining.xmlandwebparser.service.sax;
 
 import by.epam.javatraining.xmlandwebparser.service.AbstractTouristVoucherBuilder;
 import org.apache.log4j.Logger;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class TouristVouchersSAXBuilder extends AbstractTouristVoucherBuilder {
     private static final Logger logger = Logger.getLogger(TouristVouchersSAXBuilder.class);
@@ -23,9 +25,9 @@ public class TouristVouchersSAXBuilder extends AbstractTouristVoucherBuilder {
     }
 
     @Override
-    public void buildSetTouristVouchers(String fileName) {
+    public void buildSetTouristVouchers(InputStream source) {
         try {
-            reader.parse(fileName);
+            reader.parse(new InputSource(source));
         } catch (IOException | SAXException e) {
             logger.error(e);
         }

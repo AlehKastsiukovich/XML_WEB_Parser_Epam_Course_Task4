@@ -8,10 +8,7 @@ import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -33,14 +30,14 @@ public class TouristVoucherSTAXBuilder extends AbstractTouristVoucherBuilder {
     }
 
     @Override
-    public void buildSetTouristVouchers(String fileName) {
+    public void buildSetTouristVouchers(InputStream source) {
         FileInputStream inputStream = null;
         XMLStreamReader reader = null;
         String name;
 
         try {
-            inputStream = new FileInputStream(new File(fileName));
-            reader = inputFactory.createXMLStreamReader(inputStream);
+            //inputStream = new FileInputStream(new File(fileName));
+            reader = inputFactory.createXMLStreamReader(source);
 
             while (reader.hasNext()) {
                 int type = reader.next();
@@ -52,12 +49,12 @@ public class TouristVoucherSTAXBuilder extends AbstractTouristVoucherBuilder {
                     }
                 }
             }
-        } catch (FileNotFoundException | ParseException | XMLStreamException e) {
+        } catch (ParseException | XMLStreamException e) {
             logger.error(e);
         } finally {
             try {
-                if (inputStream != null) {
-                    inputStream.close();
+                if (source != null) {
+                    source.close();
                 }
             } catch (IOException e) {
                 logger.error(e);

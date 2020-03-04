@@ -20,10 +20,14 @@
 <body>
     <div class ="maintext">
     <h1 align="center">XML file parser</h1>
-    <form action="mainservlet" method="post" enctype="multipart/form-data">
-        <p align="center"><input type="file" name="file" accept="application/xml"></p>
-        <p align="center"><input type="submit"/></p>
-    </form>
+<%--    <form action="mainservlet" method="post" enctype="multipart/form-data">--%>
+<%--        <p align="center"><input type="file" name="file" accept="application/xml"></p>--%>
+<%--        <p align="center"><input type="submit"/></p>--%>
+<%--    </form>--%>
+
+        <form action="mainservlet" method="post" enctype="multipart/form-data">
+        <p align="center"><input type="file" name="file" /><input type="submit" /></p>
+        </form>
 
     <form action="${pageContext.request.contextPath}/mainservlet" method="post">
         <p align="center"><button type="submit" style="width: 95px;height: 50px" name="button" value="button1">DOM parser</button></p>
