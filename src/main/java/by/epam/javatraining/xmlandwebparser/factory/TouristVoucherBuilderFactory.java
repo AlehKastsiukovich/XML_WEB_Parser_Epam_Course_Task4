@@ -5,26 +5,42 @@ import by.epam.javatraining.xmlandwebparser.service.dom.TouristVouchersDOMBuilde
 import by.epam.javatraining.xmlandwebparser.service.sax.TouristVouchersSAXBuilder;
 import by.epam.javatraining.xmlandwebparser.service.stax.TouristVoucherSTAXBuilder;
 
+import javax.servlet.http.HttpServletRequest;
+
 public class TouristVoucherBuilderFactory {
 
-    private enum ParserType {
-        DOM,
-        SAX,
-        STAX
+    private static class TouristVoucherBuilderFactoryHolder {
+        private static final TouristVoucherBuilderFactory INSTANCE = new TouristVoucherBuilderFactory();
     }
 
-    public AbstractTouristVoucherBuilder createTouristVoucherBuilder(String type) {
-        ParserType parserType = ParserType.valueOf(type);
+    public static TouristVoucherBuilderFactory getInstance() {
+        return TouristVoucherBuilderFactoryHolder.INSTANCE;
+    }
 
-        switch (parserType) {
-            case DOM:
-                return new TouristVouchersDOMBuilder();
-            case SAX:
-                return new TouristVouchersSAXBuilder();
-            case STAX:
-                return new TouristVoucherSTAXBuilder();
-            default:
-                throw new EnumConstantNotPresentException(parserType.getDeclaringClass(), parserType.name());
+    private enum ParserType {
+        DOM("DOM_PARSER"),
+        SAX("SAX_PARSER"),
+        STAX("STAX_PARSER");
+
+        private String value;
+
+        ParserType(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
         }
     }
+
+    public AbstractTouristVoucherBuilder createTouristVoucherBuilder(HttpServletRequest request) {
+        if (request.getParameter(ParserType.DOM.getValue()) != null) {
+            return new TouristVouchersDOMBuilder();
+        }
+        if (request.getParameter(ParserType.SAX.getValue()) != null) {
+            return new TouristVouchersSAXBuilder();
+        }
+        return new TouristVoucherSTAXBuilder();
+    }
 }
+

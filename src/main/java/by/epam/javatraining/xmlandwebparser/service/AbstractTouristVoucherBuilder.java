@@ -4,7 +4,6 @@ import by.epam.javatraining.xmlandwebparser.entity.HotelSpecification;
 import by.epam.javatraining.xmlandwebparser.entity.TouristVoucher;
 import by.epam.javatraining.xmlandwebparser.entity.TransportType;
 import by.epam.javatraining.xmlandwebparser.entity.VoucherType;
-
 import java.io.InputStream;
 import java.math.BigDecimal;
 import java.text.ParseException;

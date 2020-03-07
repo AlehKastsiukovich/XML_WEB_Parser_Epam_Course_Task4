@@ -9,7 +9,6 @@
 <html>
 <head>
   <title>XML parser</title>
-  <title>Background</title>
   <style>
     body {
       background: #c7b39b url(images/bg.jpg);
@@ -25,14 +24,11 @@
 <%--        <p align="center"><input type="submit"/></p>--%>
 <%--    </form>--%>
 
-        <form action="mainservlet" method="post" enctype="multipart/form-data">
-        <p align="center"><input type="file" name="file" /><input type="submit" /></p>
-        </form>
-
-    <form action="${pageContext.request.contextPath}/mainservlet" method="post">
-        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="button" value="button1">DOM parser</button></p>
-        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="button" value="button2">SAX parser</button></p>
-        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="button" value="button3">STAX parser</button></p>
+        <form action="mainServlet" method="post" enctype="multipart/form-data">
+        <p align="center"><input type="file" name="file" /></p>
+        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="DOM_PARSER" value="DOM_PARSER">DOM parser</button></p>
+        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="SAX_PARSER" value="">SAX parser</button></p>
+        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="STAX_PARSER" value="button3">STAX parser</button></p>
     </form>
     </div>
   </body>
