@@ -35,8 +35,6 @@ public class Controller extends HttpServlet {
         AbstractTouristVoucherBuilder builder = factory.createTouristVoucherBuilder(request);
         builder.buildSetTouristVouchers(fileContent);
         Set<TouristVoucher> voucherSet = builder.getTouristVoucherSet();
-        PrintWriter printWriter = response.getWriter();
-        printWriter.write(voucherSet.toString());
         request.setAttribute("resultSet", voucherSet);
         request.getRequestDispatcher("/resultTable.jsp").forward(request, response);
     }

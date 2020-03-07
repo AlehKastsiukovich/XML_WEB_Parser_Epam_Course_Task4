@@ -40,7 +40,11 @@ public class TouristVoucherBuilderFactory {
         if (request.getParameter(ParserType.SAX.getValue()) != null) {
             return new TouristVouchersSAXBuilder();
         }
-        return new TouristVoucherSTAXBuilder();
+        if (request.getParameter(ParserType.STAX.getValue()) != null) {
+            return new TouristVoucherSTAXBuilder();
+        }
+
+        return null;
     }
 }
 

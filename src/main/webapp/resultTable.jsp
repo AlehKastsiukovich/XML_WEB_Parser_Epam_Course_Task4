@@ -21,6 +21,7 @@
 
 </head>
 <body>
+    <h1 align="center">All tourist vouchers: </h1>
     <table border="2" align="center" width="80%">
         <thead>
         <tr>

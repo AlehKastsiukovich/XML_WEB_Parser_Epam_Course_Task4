@@ -18,15 +18,10 @@ import java.util.Set;
 public class TouristVoucherSTAXBuilder extends AbstractTouristVoucherBuilder {
     private static final Logger logger = Logger.getLogger(TouristVoucherSTAXBuilder.class);
     private static final int ID_ATTRIBUTE_POSITION = 0;
-    private Set<TouristVoucher> touristVouchers = new HashSet<>();
     private XMLInputFactory inputFactory;
 
     public TouristVoucherSTAXBuilder() {
         inputFactory = XMLInputFactory.newInstance();
-    }
-
-    public Set<TouristVoucher> getTouristVouchers() {
-        return touristVouchers;
     }
 
     @Override
@@ -45,7 +40,7 @@ public class TouristVoucherSTAXBuilder extends AbstractTouristVoucherBuilder {
                     name = reader.getLocalName();
                     if (TouristVoucherEnum.valueOf(name.toUpperCase()) == TouristVoucherEnum.TOURISTVOUCHER) {
                         TouristVoucher touristVoucher = buildTouristVoucher(reader);
-                        touristVouchers.add(touristVoucher);
+                        touristVoucherSet.add(touristVoucher);
                     }
                 }
             }
