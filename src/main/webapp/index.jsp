@@ -19,16 +19,11 @@
 <body>
     <div class ="maintext">
     <h1 align="center">XML file parser</h1>
-<%--    <form action="mainservlet" method="post" enctype="multipart/form-data">--%>
-<%--        <p align="center"><input type="file" name="file" accept="application/xml"></p>--%>
-<%--        <p align="center"><input type="submit"/></p>--%>
-<%--    </form>--%>
-
         <form action="mainServlet" method="post" enctype="multipart/form-data">
-        <p align="center"><input type="file" name="file" /></p>
+        <p align="center"><input type="file" name="file" value="Choose File"/></p>
         <p align="center"><button type="submit" style="width: 95px;height: 50px" name="DOM_PARSER" value="DOM_PARSER">DOM parser</button></p>
-        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="SAX_PARSER" value="">SAX parser</button></p>
-        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="STAX_PARSER" value="button3">STAX parser</button></p>
+        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="SAX_PARSER" value="SAX_PARSER">SAX parser</button></p>
+        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="STAX_PARSER" value="STAX_PARSER">STAX parser</button></p>
     </form>
     </div>
   </body>
