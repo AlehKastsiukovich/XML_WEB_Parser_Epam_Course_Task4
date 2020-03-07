@@ -12,8 +12,6 @@ import java.io.*;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.HashSet;
-import java.util.Set;
 
 public class TouristVoucherSTAXBuilder extends AbstractTouristVoucherBuilder {
     private static final Logger logger = Logger.getLogger(TouristVoucherSTAXBuilder.class);
@@ -31,7 +29,6 @@ public class TouristVoucherSTAXBuilder extends AbstractTouristVoucherBuilder {
         String name;
 
         try {
-            //inputStream = new FileInputStream(new File(fileName));
             reader = inputFactory.createXMLStreamReader(source);
 
             while (reader.hasNext()) {

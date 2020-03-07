@@ -1,5 +1,6 @@
 package by.epam.javatraining.xmlandwebparser.controller;
 
+import by.epam.javatraining.xmlandwebparser.command.PageType;
 import by.epam.javatraining.xmlandwebparser.entity.TouristVoucher;
 import by.epam.javatraining.xmlandwebparser.factory.TouristVoucherBuilderFactory;
 import by.epam.javatraining.xmlandwebparser.service.AbstractTouristVoucherBuilder;
@@ -37,5 +38,6 @@ public class Controller extends HttpServlet {
         Set<TouristVoucher> voucherSet = builder.getTouristVoucherSet();
         request.setAttribute("resultSet", voucherSet);
         request.getRequestDispatcher("/resultTable.jsp").forward(request, response);
+
     }
 }
