@@ -8,6 +8,9 @@ import by.epam.javatraining.xmlandwebparser.command.parsecommand.StaxParseComman
 
 public class TouristVoucherBuilderFactory {
 
+    private TouristVoucherBuilderFactory() {
+    }
+
     private static class TouristVoucherBuilderFactoryHolder {
         private static final TouristVoucherBuilderFactory INSTANCE = new TouristVoucherBuilderFactory();
     }

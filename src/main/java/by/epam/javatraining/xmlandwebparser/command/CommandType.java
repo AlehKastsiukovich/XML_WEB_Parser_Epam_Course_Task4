@@ -7,7 +7,7 @@ public enum CommandType {
 
     private String value;
 
-    private CommandType(String value) {
+    CommandType(String value) {
         this.value = value;
     }
 

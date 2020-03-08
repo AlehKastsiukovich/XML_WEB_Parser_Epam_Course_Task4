@@ -3,7 +3,6 @@ package by.epam.javatraining.xmlandwebparser.service;
 import by.epam.javatraining.xmlandwebparser.command.CommandType;
 import by.epam.javatraining.xmlandwebparser.entity.TouristVoucher;
 import by.epam.javatraining.xmlandwebparser.validator.XSDValidator;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
@@ -13,6 +12,9 @@ import java.text.ParseException;
 import java.util.Set;
 
 public class ParserXML {
+
+    private ParserXML() {
+    }
 
     private static class ParserXMLHolder {
         private static final ParserXML INSTANCE = new ParserXML();

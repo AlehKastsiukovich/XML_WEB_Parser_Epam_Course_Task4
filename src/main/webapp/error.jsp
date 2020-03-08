@@ -21,5 +21,9 @@
 
 <body>
 <h1 align="center">Sorry, we have some issues or request is wrong...</h1>
+        <div class="error-message-container">
+            <p><h2 align="center">Error status: ${pageContext.errorData.statusCode}</h2></p>
+            <p><h2 align="center">Request URI: ${pageContext.errorData.requestURI}</h2></p>
+        </div>
 </body>
 </html>

@@ -20,7 +20,7 @@ public enum TouristVoucherEnum {
 
     private String value;
 
-    private TouristVoucherEnum(String value) {
+    TouristVoucherEnum(String value) {
         this.value = value;
     }
 
