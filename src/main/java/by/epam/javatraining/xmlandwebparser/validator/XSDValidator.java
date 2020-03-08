@@ -1,10 +1,9 @@
 package by.epam.javatraining.xmlandwebparser.validator;
 
 import by.epam.javatraining.xmlandwebparser.command.CommandType;
-import by.epam.javatraining.xmlandwebparser.exception.ValidatorException;
 import org.apache.log4j.Logger;
-import org.w3c.dom.DOMException;
 import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
@@ -15,7 +14,7 @@ import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 import java.io.*;
 
-public class XSDValidator {
+public class XSDValidator extends DefaultHandler {
     private static final Logger logger = Logger.getLogger(XSDValidator.class);
 
     private static final String TEMPORARY_XML_FILE = "tempXmlFile.xml";
@@ -32,7 +31,7 @@ public class XSDValidator {
         return XSDValidatorHolder.INSTANCE;
     }
 
-    public void validateXMLSchema(HttpServletRequest request) throws ValidatorException {
+    public void validateXMLSchema(HttpServletRequest request) {
         try {
             File targetFile = writeTemporaryFile(request);
             File xsdFile = new File(getTouristVoucherXsdPath());
@@ -42,7 +41,6 @@ public class XSDValidator {
             validator.validate(new StreamSource(targetFile));
         } catch (IOException | ServletException | SAXException e) {
             logger.error(e);
-            throw new ValidatorException(e);
         }
     }
 

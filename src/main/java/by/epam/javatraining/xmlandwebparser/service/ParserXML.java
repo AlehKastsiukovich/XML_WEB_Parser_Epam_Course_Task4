@@ -37,7 +37,7 @@ public class ParserXML {
             Part filePart = request.getPart(CommandType.FILE.getValue());
             InputStream fileContent = filePart.getInputStream();
             builder.buildSetTouristVouchers(fileContent);
-        } catch (IOException | ServletException | ParseException | ValidatorException e) {
+        } catch (IOException | ServletException | ParseException e) {
             logger.error(e);
             throw new ServiceException(e);
         }
