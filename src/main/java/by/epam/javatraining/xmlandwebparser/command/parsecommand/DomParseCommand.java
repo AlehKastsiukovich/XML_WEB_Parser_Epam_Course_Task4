@@ -4,6 +4,7 @@ import by.epam.javatraining.xmlandwebparser.command.Command;
 import by.epam.javatraining.xmlandwebparser.command.PageType;
 import by.epam.javatraining.xmlandwebparser.entity.TouristVoucher;
 import by.epam.javatraining.xmlandwebparser.builder.AbstractTouristVoucherBuilder;
+import by.epam.javatraining.xmlandwebparser.exception.ServiceException;
 import by.epam.javatraining.xmlandwebparser.service.ParserXML;
 import by.epam.javatraining.xmlandwebparser.builder.dom.TouristVouchersDOMBuilder;
 import org.apache.log4j.Logger;
@@ -24,7 +25,7 @@ public class DomParseCommand implements Command {
             Set<TouristVoucher> voucherSet = ParserXML.getInstance().parseXML(request, builder);
             request.setAttribute("resultSet", voucherSet);
             return PageType.PARSE_RESULT_PAGE.getValue();
-        } catch (IOException | ServletException | ParseException e) {
+        } catch (ServiceException e) {
             logger.error(e);
             return PageType.ERROR_PAGE.getValue();
         }
