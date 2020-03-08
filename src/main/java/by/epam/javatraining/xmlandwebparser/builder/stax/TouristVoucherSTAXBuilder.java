@@ -1,8 +1,8 @@
-package by.epam.javatraining.xmlandwebparser.service.stax;
+package by.epam.javatraining.xmlandwebparser.builder.stax;
 
-import by.epam.javatraining.xmlandwebparser.service.AbstractTouristVoucherBuilder;
+import by.epam.javatraining.xmlandwebparser.builder.AbstractTouristVoucherBuilder;
 import by.epam.javatraining.xmlandwebparser.entity.*;
-import by.epam.javatraining.xmlandwebparser.service.TouristVoucherEnum;
+import by.epam.javatraining.xmlandwebparser.builder.TouristVoucherEnum;
 import org.apache.log4j.Logger;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;

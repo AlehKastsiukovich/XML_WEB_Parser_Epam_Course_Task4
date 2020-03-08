@@ -1,4 +1,4 @@
-package by.epam.javatraining.xmlandwebparser.service;
+package by.epam.javatraining.xmlandwebparser.builder;
 
 import by.epam.javatraining.xmlandwebparser.entity.MealType;
 

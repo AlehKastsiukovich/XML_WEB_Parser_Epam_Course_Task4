@@ -1,7 +1,7 @@
-package by.epam.javatraining.xmlandwebparser.service.sax;
+package by.epam.javatraining.xmlandwebparser.builder.sax;
 
 import by.epam.javatraining.xmlandwebparser.entity.*;
-import by.epam.javatraining.xmlandwebparser.service.TouristVoucherEnum;
+import by.epam.javatraining.xmlandwebparser.builder.TouristVoucherEnum;
 import org.apache.log4j.Logger;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;

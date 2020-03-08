@@ -3,9 +3,9 @@ package by.epam.javatraining.xmlandwebparser.command.parsecommand;
 import by.epam.javatraining.xmlandwebparser.command.Command;
 import by.epam.javatraining.xmlandwebparser.command.PageType;
 import by.epam.javatraining.xmlandwebparser.entity.TouristVoucher;
-import by.epam.javatraining.xmlandwebparser.service.AbstractTouristVoucherBuilder;
+import by.epam.javatraining.xmlandwebparser.builder.AbstractTouristVoucherBuilder;
 import by.epam.javatraining.xmlandwebparser.service.ParserXML;
-import by.epam.javatraining.xmlandwebparser.service.sax.TouristVouchersSAXBuilder;
+import by.epam.javatraining.xmlandwebparser.builder.sax.TouristVouchersSAXBuilder;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;

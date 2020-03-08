@@ -1,5 +1,6 @@
 package by.epam.javatraining.xmlandwebparser.service;
 
+import by.epam.javatraining.xmlandwebparser.builder.AbstractTouristVoucherBuilder;
 import by.epam.javatraining.xmlandwebparser.command.CommandType;
 import by.epam.javatraining.xmlandwebparser.entity.TouristVoucher;
 import by.epam.javatraining.xmlandwebparser.validator.XSDValidator;

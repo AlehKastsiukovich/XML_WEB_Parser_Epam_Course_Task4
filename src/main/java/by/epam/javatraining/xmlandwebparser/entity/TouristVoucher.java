@@ -1,6 +1,6 @@
 package by.epam.javatraining.xmlandwebparser.entity;
 
-import by.epam.javatraining.xmlandwebparser.service.AbstractTouristVoucherBuilder;
+import by.epam.javatraining.xmlandwebparser.builder.AbstractTouristVoucherBuilder;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
