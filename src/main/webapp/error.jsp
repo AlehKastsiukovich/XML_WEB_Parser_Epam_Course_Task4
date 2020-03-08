@@ -20,6 +20,6 @@
 </head>
 
 <body>
-<h1 align="center">Sorry, we have some issues or request is wrong!</h1>
+<h1 align="center">Sorry, we have some issues or request is wrong...</h1>
 </body>
 </html>

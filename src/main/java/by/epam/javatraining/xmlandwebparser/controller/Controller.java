@@ -32,12 +32,15 @@ public class Controller extends HttpServlet {
     private void handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, ParseException {
         Part filePart = request.getPart(FILE);
         InputStream fileContent = filePart.getInputStream();
-        TouristVoucherBuilderFactory factory = TouristVoucherBuilderFactory.getInstance();
-        AbstractTouristVoucherBuilder builder = factory.createTouristVoucherBuilder(request);
-        builder.buildSetTouristVouchers(fileContent);
-        Set<TouristVoucher> voucherSet = builder.getTouristVoucherSet();
-        request.setAttribute("resultSet", voucherSet);
-        request.getRequestDispatcher("/resultTable.jsp").forward(request, response);
+        PrintWriter printWriter = response.getWriter();
+        String name = request.getParameter("command");
+        printWriter.write(name);
 
+//        TouristVoucherBuilderFactory factory = TouristVoucherBuilderFactory.getInstance();
+//        AbstractTouristVoucherBuilder builder = factory.createTouristVoucherBuilder(request);
+//        builder.buildSetTouristVouchers(fileContent);
+//        Set<TouristVoucher> voucherSet = builder.getTouristVoucherSet();
+//        request.setAttribute("resultSet", voucherSet);
+//        request.getRequestDispatcher(PageType.PARSE_RESULT_PAGE.getValue()).forward(request, response);
     }
 }

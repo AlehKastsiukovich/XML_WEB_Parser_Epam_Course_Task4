@@ -18,7 +18,6 @@ public enum TouristVoucherEnum {
     PRICE("price"),
     HOTELSPECIFICATION("hotelSpecification");
 
-
     private String value;
 
     private TouristVoucherEnum(String value) {

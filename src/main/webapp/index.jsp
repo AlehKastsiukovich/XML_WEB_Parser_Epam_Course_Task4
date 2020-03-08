@@ -21,9 +21,9 @@
     <h1 align="center">XML file parser</h1>
         <form action="mainServlet" method="post" enctype="multipart/form-data">
             <p align="center"><input type="file" name="file"/></p>>
-        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="DOM_PARSER" value="DOM_PARSER">DOM parser</button></p>
-        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="SAX_PARSER" value="SAX_PARSER">SAX parser</button></p>
-        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="STAX_PARSER" value="STAX_PARSER">STAX parser</button></p>
+        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="command" value="DOM_PARSER">DOM parser</button></p>
+        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="command" value="SAX_PARSER">SAX parser</button></p>
+        <p align="center"><button type="submit" style="width: 95px;height: 50px" name="command" value="STAX_PARSER">STAX parser</button></p>
     </form>
     </div>
   </body>
