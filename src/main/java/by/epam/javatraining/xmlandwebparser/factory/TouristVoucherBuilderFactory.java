@@ -5,17 +5,15 @@ import by.epam.javatraining.xmlandwebparser.command.parsecommand.DomParseCommand
 import by.epam.javatraining.xmlandwebparser.command.parsecommand.ErrorMessageCommand;
 import by.epam.javatraining.xmlandwebparser.command.parsecommand.SaxParseCommand;
 import by.epam.javatraining.xmlandwebparser.command.parsecommand.StaxParseCommand;
-import by.epam.javatraining.xmlandwebparser.service.AbstractTouristVoucherBuilder;
-import by.epam.javatraining.xmlandwebparser.service.dom.TouristVouchersDOMBuilder;
-import by.epam.javatraining.xmlandwebparser.service.sax.TouristVouchersSAXBuilder;
-import by.epam.javatraining.xmlandwebparser.service.stax.TouristVoucherSTAXBuilder;
-
-import javax.servlet.http.HttpServletRequest;
 
 public class TouristVoucherBuilderFactory {
 
     private static class TouristVoucherBuilderFactoryHolder {
         private static final TouristVoucherBuilderFactory INSTANCE = new TouristVoucherBuilderFactory();
+    }
+
+    public static TouristVoucherBuilderFactory getInstance() {
+        return TouristVoucherBuilderFactoryHolder.INSTANCE;
     }
 
     public Command chooseParseCommand(String builderName) {

@@ -33,7 +33,7 @@ public class Controller extends HttpServlet {
 
     private void handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, ParseException {
         String name = request.getParameter(CommandType.COMMAND.getValue());
-        Command command = new DomParseCommand();
+        Command command = TouristVoucherBuilderFactory.getInstance().chooseParseCommand(name);
         String forwardPage = command.execute(request, response);
         request.getRequestDispatcher(forwardPage).forward(request, response);
     }
