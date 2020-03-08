@@ -34,6 +34,7 @@ public class TouristVoucherBuilderFactory {
     }
 
     public AbstractTouristVoucherBuilder createTouristVoucherBuilder(HttpServletRequest request) {
+
         if (request.getParameter(ParserType.DOM.getValue()) != null) {
             return new TouristVouchersDOMBuilder();
         }

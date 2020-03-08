@@ -1,5 +1,6 @@
 package by.epam.javatraining.xmlandwebparser.controller;
 
+import by.epam.javatraining.xmlandwebparser.command.CommandType;
 import by.epam.javatraining.xmlandwebparser.command.PageType;
 import by.epam.javatraining.xmlandwebparser.entity.TouristVoucher;
 import by.epam.javatraining.xmlandwebparser.factory.TouristVoucherBuilderFactory;
@@ -18,7 +19,6 @@ import java.util.Set;
 @WebServlet("/mainServlet")
 @MultipartConfig
 public class Controller extends HttpServlet {
-    private static final String FILE = "file";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -32,15 +32,14 @@ public class Controller extends HttpServlet {
     private void handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, ParseException {
         Part filePart = request.getPart(FILE);
         InputStream fileContent = filePart.getInputStream();
-        PrintWriter printWriter = response.getWriter();
-        String name = request.getParameter("command");
-        printWriter.write(name);
+        String name = request.getParameter(CommandType.COMMAND.getValue());
 
-//        TouristVoucherBuilderFactory factory = TouristVoucherBuilderFactory.getInstance();
-//        AbstractTouristVoucherBuilder builder = factory.createTouristVoucherBuilder(request);
-//        builder.buildSetTouristVouchers(fileContent);
-//        Set<TouristVoucher> voucherSet = builder.getTouristVoucherSet();
-//        request.setAttribute("resultSet", voucherSet);
-//        request.getRequestDispatcher(PageType.PARSE_RESULT_PAGE.getValue()).forward(request, response);
+
+        TouristVoucherBuilderFactory factory = TouristVoucherBuilderFactory.getInstance();
+        AbstractTouristVoucherBuilder builder = factory.createTouristVoucherBuilder(request);
+        builder.buildSetTouristVouchers(fileContent);
+        Set<TouristVoucher> voucherSet = builder.getTouristVoucherSet();
+        request.setAttribute("resultSet", voucherSet);
+        request.getRequestDispatcher(PageType.PARSE_RESULT_PAGE.getValue()).forward(request, response);
     }
 }
