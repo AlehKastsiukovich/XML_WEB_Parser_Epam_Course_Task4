@@ -4,6 +4,7 @@ import by.epam.javatraining.xmlandwebparser.builder.AbstractTouristVoucherBuilde
 import by.epam.javatraining.xmlandwebparser.command.CommandType;
 import by.epam.javatraining.xmlandwebparser.entity.TouristVoucher;
 import by.epam.javatraining.xmlandwebparser.exception.ServiceException;
+import by.epam.javatraining.xmlandwebparser.exception.ValidatorException;
 import by.epam.javatraining.xmlandwebparser.validator.XSDValidator;
 import org.apache.log4j.Logger;
 
@@ -36,7 +37,8 @@ public class ParserXML {
             Part filePart = request.getPart(CommandType.FILE.getValue());
             InputStream fileContent = filePart.getInputStream();
             builder.buildSetTouristVouchers(fileContent);
-        } catch (IOException | ServletException | ParseException e) {
+        } catch (IOException | ServletException | ParseException | ValidatorException e) {
+            logger.error(e);
             throw new ServiceException(e);
         }
         return builder.getTouristVoucherSet();
