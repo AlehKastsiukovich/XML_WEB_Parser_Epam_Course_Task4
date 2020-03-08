@@ -1,6 +1,7 @@
 package by.epam.javatraining.xmlandwebparser.validator;
 
 import by.epam.javatraining.xmlandwebparser.command.CommandType;
+import org.apache.log4j.Logger;
 import org.xml.sax.SAXException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,8 @@ import javax.xml.validation.Validator;
 import java.io.*;
 
 public class XSDValidator {
+    private static final Logger logger = Logger.getLogger(XSDValidator.class);
+
     private static final String TEMPORARY_XML_FILE = "tempXmlFile.xml";
     private static final String XSD_VALIDATION_FILE = "touristVouchers.xsd";
 
@@ -33,7 +36,7 @@ public class XSDValidator {
             Validator validator = schema.newValidator();
             validator.validate(new StreamSource(targetFile));
         } catch (IOException | ServletException | SAXException e) {
-
+            logger.error(e);
         }
     }
 
