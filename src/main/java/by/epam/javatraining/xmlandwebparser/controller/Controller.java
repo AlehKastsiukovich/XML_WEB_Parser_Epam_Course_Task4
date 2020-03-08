@@ -1,7 +1,9 @@
 package by.epam.javatraining.xmlandwebparser.controller;
 
+import by.epam.javatraining.xmlandwebparser.command.Command;
 import by.epam.javatraining.xmlandwebparser.command.CommandType;
 import by.epam.javatraining.xmlandwebparser.command.PageType;
+import by.epam.javatraining.xmlandwebparser.command.parsecommand.DomParseCommand;
 import by.epam.javatraining.xmlandwebparser.entity.TouristVoucher;
 import by.epam.javatraining.xmlandwebparser.factory.TouristVoucherBuilderFactory;
 import by.epam.javatraining.xmlandwebparser.service.AbstractTouristVoucherBuilder;
@@ -30,16 +32,9 @@ public class Controller extends HttpServlet {
     }
 
     private void handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, ParseException {
-        Part filePart = request.getPart(FILE);
-        InputStream fileContent = filePart.getInputStream();
         String name = request.getParameter(CommandType.COMMAND.getValue());
-
-
-        TouristVoucherBuilderFactory factory = TouristVoucherBuilderFactory.getInstance();
-        AbstractTouristVoucherBuilder builder = factory.createTouristVoucherBuilder(request);
-        builder.buildSetTouristVouchers(fileContent);
-        Set<TouristVoucher> voucherSet = builder.getTouristVoucherSet();
-        request.setAttribute("resultSet", voucherSet);
-        request.getRequestDispatcher(PageType.PARSE_RESULT_PAGE.getValue()).forward(request, response);
+        Command command = new DomParseCommand();
+        String forwardPage = command.execute(request, response);
+        request.getRequestDispatcher(forwardPage).forward(request, response);
     }
 }
