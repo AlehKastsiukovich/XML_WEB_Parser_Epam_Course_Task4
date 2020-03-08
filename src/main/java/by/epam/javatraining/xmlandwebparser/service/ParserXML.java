@@ -2,6 +2,8 @@ package by.epam.javatraining.xmlandwebparser.service;
 
 import by.epam.javatraining.xmlandwebparser.command.CommandType;
 import by.epam.javatraining.xmlandwebparser.entity.TouristVoucher;
+import by.epam.javatraining.xmlandwebparser.validator.XSDValidator;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
@@ -21,6 +23,8 @@ public class ParserXML {
     }
 
     public Set<TouristVoucher> parseXML(HttpServletRequest request, AbstractTouristVoucherBuilder builder) throws IOException, ServletException, ParseException {
+        XSDValidator xsdValidator = XSDValidator.getInstance();
+        xsdValidator.validateXMLSchema(request);
         Part filePart = request.getPart(CommandType.FILE.getValue());
         InputStream fileContent = filePart.getInputStream();
         builder.buildSetTouristVouchers(fileContent);
